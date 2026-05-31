@@ -139,7 +139,7 @@ write-prd -> write-todo -> TODO 번호로 구현 요청
 - `TODO.md`: 어떤 순서로 구현할지 기록한다.
 - `CONTEXT.md`: 같은 개념의 이름이 흔들릴 때만 만드는 작은 용어집(glossary)이다.
 - `DESIGN.md`: 색, 글꼴, 간격, 컴포넌트 분위기 같은 시각 기준이다.
-- `LIBRARY_MAP.md`: 앱 요구에 맞는 라이브러리 후보를 좁히는 참고 지도다.
+- `skills/write-prd/references/LIBRARY_MAP.md`: 앱 요구에 맞는 라이브러리 후보를 좁히는 참고 지도다.
 - `AGENTS.md`, `CLAUDE.md`: 에이전트(agent)가 프로젝트에서 지킬 작업 규칙이다.
 - `docs/agents/starter-skills.md`: 문서 위치, 실행 명령, OS별 Shell, 네트워크 URL, 환경 전제 같은 프로젝트 설정이다.
 
@@ -152,7 +152,7 @@ write-prd -> write-todo -> TODO 번호로 구현 요청
 - **[write-prd](./skills/write-prd/SKILL.md)**: 결정된 제품 방향, 앱 형태, 데이터 필요, 사용 환경을 로컬 `PRD.md`로 정리한다.
 - **[write-todo](./skills/write-todo/SKILL.md)**: `PRD.md`를 사용자가 확인할 수 있는 작은 TODO 순서로 나눈다.
 - **[apply-design](./skills/apply-design/SKILL.md)**: 붙여넣은 디자인 시스템을 프로젝트용 `DESIGN.md`로 정리하고 요청받으면 UI에 적용한다.
-- **[LIBRARY_MAP.md](./LIBRARY_MAP.md)**: UI, 폼, 표, 차트, DB, 파일, PDF, 검색, 인증, 테스트 등 라이브러리 후보를 상황별로 좁힌다.
+- **[LIBRARY_MAP.md](./skills/write-prd/references/LIBRARY_MAP.md)**: UI, 폼, 표, 차트, DB, 파일, PDF, 검색, 인증, 테스트 등 라이브러리 후보를 상황별로 좁힌다.
 
 ### 중간 작업 (During the Project)
 
