@@ -1,0 +1,13 @@
+{
+  "name": "starter-skills",
+  "skills": [
+    "./skills/setup-project",
+    "./skills/clarify-idea",
+    "./skills/write-prd",
+    "./skills/write-todo",
+    "./skills/apply-design",
+    "./skills/sync-docs",
+    "./skills/diagnose",
+    "./skills/refactor"
+  ]
+}
