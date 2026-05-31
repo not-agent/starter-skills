@@ -10,6 +10,14 @@ AI 코딩은 보통 "일단 만들어줘"에서 시작할 수 있다. 하지만 
 
 목표는 단순하다. 에이전트가 더 많이 하게 만드는 것이 아니라, 사용자가 원하는 것을 더 작고 분명하게 만들게 하는 것이다.
 
+## 기본 전제 (Defaults)
+
+이 스킬팩은 혼자 또는 작은 팀이 사내 교육, 업무 자동화, 데모, MVP를 빠르게 만들고 직접 확인하는 상황을 기본으로 둔다. 인터넷 공개 서비스, 대규모 트래픽, 복잡한 권한 체계, 클라우드 인프라는 기본값이 아니다.
+
+기술 선택은 실행 부담을 낮추는 쪽으로 잡았다. 화면이 있는 앱은 Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, lucide-react를 우선 후보로 둔다. 한 프로젝트 안에서 화면, 서버 로직, Route Handler, Server Action을 함께 다룰 수 있고, `npm run start`로 사내망 PC나 내부 서버에서 실행하기 쉽기 때문이다.
+
+저장이 필요하면 먼저 SQLite 파일과 작은 DB helper를 검토한다. Zod, React Hook Form, Recharts, TanStack Table, Drizzle ORM 같은 도구는 입력 검증, 복잡한 폼, 차트, 고급 표, 관계형 DB 관리가 실제로 필요할 때만 추가한다. Docker, 외부 DB, 인증 서비스, 전역 상태관리, 데이터 패칭 라이브러리는 요구가 분명할 때만 쓴다.
+
 ## 빠른 시작 (Quickstart)
 
 1. skills.sh 설치 도구(installer)를 실행한다.
