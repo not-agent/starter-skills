@@ -23,7 +23,9 @@ description: 현재 대화에서 결정된 제품 방향, 앱 형태, 데이터 
 
 앱 형태, 데이터 필요, 기술 전제는 `setup-project`에서 만들지 않는다. `clarify-idea` 대화나 사용자의 직접 요청으로 충분히 결정된 뒤 이 스킬에서 PRD에 기록한다.
 
-기술 전제가 이미 정해졌거나 사용자가 추천을 요청하면 [mvp-library-stack.md](./mvp-library-stack.md)를 먼저 읽고, 필요한 경우 하나의 preset만 참고한다.
+기술 전제가 이미 정해졌거나 사용자가 추천을 요청하면 [references/LIBRARY_MAP.md](./references/LIBRARY_MAP.md)에서 관련 카테고리만 참고한다. 전체 문서를 한 번에 읽지 않는다.
+
+흔한 앱 형태가 명확하면 [mvp-library-stack.md](./mvp-library-stack.md)를 읽고, 필요한 경우 하나의 preset만 참고한다.
 
 - 저장 없는 UI: [preset-local-ui.md](./preset-local-ui.md)
 - 사내 대시보드: [preset-intranet-dashboard.md](./preset-intranet-dashboard.md)
@@ -32,6 +34,8 @@ description: 현재 대화에서 결정된 제품 방향, 앱 형태, 데이터 
 - 데이터 리포트: [preset-data-report.md](./preset-data-report.md)
 
 선택할 근거가 부족하면 preset을 고르지 않는다. 멋있어 보인다는 이유만으로 DB, ORM, 인증(auth), 상태관리(state management), 외부 API 클라이언트를 넣지 않는다.
+
+라이브러리를 PRD에 기록할 때는 "왜 필요한지"와 "이번에 넣지 않는 것"을 함께 적는다. 최신 API나 설치 명령은 구현 직전에 공식 문서로 확인한다.
 
 ## PRD.md 형식 (PRD.md Format)
 

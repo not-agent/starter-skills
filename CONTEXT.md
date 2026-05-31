@@ -38,12 +38,17 @@ _피할 표현(Avoid)_: PRD, 기능 명세
 이미 결정된 실행 방식, 저장 방식, 주요 라이브러리 전제. `setup-project`가 고르지 않고, 아이디어가 충분히 정리된 뒤 `write-prd`가 필요한 경우에만 기록한다.
 _피할 표현(Avoid)_: 기본 스택, 항상 쓰는 preset
 
+**라이브러리 지도(Library Map)**:
+요구에 맞는 라이브러리 후보를 좁히는 참고 문서. `LIBRARY_MAP.md`에 둔다. 최신 API 문서나 설치 가이드가 아니다.
+_피할 표현(Avoid)_: 추천 순위표, 기본 설치 목록, 최신 문서
+
 ## 관계 (Relationships)
 
 - `setup-project`는 **프로젝트 설정(Project Setup)**만 작성한다.
 - **프로젝트 설정(Project Setup)**은 **사용자 URL(User URL)**을 네트워크 주소 형식으로 기록한다.
 - `clarify-idea`는 요청이 흐릿할 때만 **앱 형태(App Shape)**, 데이터 필요, 성공 기준 같은 결정을 한 질문씩 좁힌다. 파일은 쓰지 않는다.
 - `write-prd`는 결정된 내용을 **PRD**에 기록하고, 필요할 때만 **기술 전제(Technical Baseline)**를 포함한다.
+- **기술 전제(Technical Baseline)**를 정리할 때는 필요한 경우 **라이브러리 지도(Library Map)**의 관련 카테고리만 참고한다.
 - `write-todo`는 **PRD**를 **TODO**로 나눈다.
 - `apply-design`은 **디자인 기준(Design Reference)**을 `DESIGN.md`에 기록하거나 적용한다.
 
@@ -53,3 +58,4 @@ _피할 표현(Avoid)_: 기본 스택, 항상 쓰는 preset
 - `clarify-idea`는 PRD나 TODO를 쓰지 않는다. 새 프로젝트, 새 기능, 방향 전환에 모두 쓸 수 있지만 필수 시작 단계는 아니다.
 - `TODO`는 GitHub Issue나 기술 계층별 체크리스트가 아니다. 사용자가 확인할 수 있는 결과로 쓴다.
 - **사용자 URL(User URL)**이나 **사내망 앱(Intranet App)**의 공유 주소를 `localhost`로 안내하지 않는다.
+- **라이브러리 지도(Library Map)**는 선택 후보를 좁히는 용도다. 라이브러리를 자동으로 추가하라는 뜻이 아니다.
