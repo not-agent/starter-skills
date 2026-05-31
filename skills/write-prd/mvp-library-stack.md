@@ -5,9 +5,10 @@
 ## 원칙
 
 - 라이브러리는 사용자가 볼 수 있는 완성도나 반복 구현 안정성을 높일 때만 넣는다.
-- 모든 프로젝트에 DB, 인증(auth), 상태관리(state management), 데이터 패칭 라이브러리를 넣지 않는다.
+- 모든 프로젝트에 DB, 상태관리(state management), 데이터 패칭(data fetching) 라이브러리를 넣지 않는다.
 - 이미 프로젝트가 쓰는 스택이 있으면 기존 선택을 우선한다.
 - 환경 전제는 Node.js, Python, Git이다. 별도 시스템 도구나 외부 서비스를 기본값으로 요구하지 않는다.
+- 실습과 교육의 기본 관심사는 SaaS 연동이 아니라 UI와 앱 기능을 덜 허술하게 만드는 라이브러리 선택이다.
 - 사내망 앱의 공유 주소는 `localhost`가 아니라 `http://<사내망 IPv4>:3000`이다.
 
 ## 기본 UI 묶음
@@ -31,17 +32,18 @@
 - 정렬, 필터, 페이지네이션, 컬럼 표시/숨김이 필요하면 TanStack Table을 추가한다.
 - SQLite 파일 저장이 필요하면 먼저 단순 SQLite 접근과 작은 DB helper로 시작한다.
 - Drizzle ORM은 테이블 관계, 마이그레이션, 타입 안전한 쿼리가 실제 이득일 때만 추가한다.
+- 명령 팔레트, toast, drag-and-drop, resizable panel, calendar 같은 사용자가 바로 체감하는 UI 기능은 직접 만들기 전에 적절한 라이브러리를 검토한다.
 
 ## 기본값에서 제외
 
 명확한 요구가 없으면 추가하지 않는다.
 
-- Auth.js 또는 NextAuth
 - Prisma
 - TanStack Query
 - Zustand, Redux 같은 전역 상태관리
 - PostgreSQL, MySQL 같은 외부 DB
 - 백그라운드 작업 큐
+- 인증, 결제, 메일 발송, hosted DB 같은 서비스 연동
 
 ## UI 완성도 기준
 

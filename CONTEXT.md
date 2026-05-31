@@ -39,8 +39,8 @@ _피할 표현(Avoid)_: PRD, 기능 명세
 _피할 표현(Avoid)_: 기본 스택, 항상 쓰는 preset
 
 **라이브러리 지도(Library Map)**:
-요구에 맞는 라이브러리 후보를 좁히는 참고 문서. `skills/write-prd/references/LIBRARY_MAP.md`에 둔다. 최신 API 문서나 설치 가이드가 아니다.
-_피할 표현(Avoid)_: 추천 순위표, 기본 설치 목록, 최신 문서
+요구에 맞는 라이브러리 후보를 좁히는 참고 문서. `skills/write-prd/references/LIBRARY_MAP.md`에 둔다. 최신 API 문서, 설치 가이드, SaaS 후보표가 아니다.
+_피할 표현(Avoid)_: 추천 순위표, 기본 설치 목록, 최신 문서, 서비스 카탈로그
 
 ## 관계 (Relationships)
 

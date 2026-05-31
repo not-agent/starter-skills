@@ -16,7 +16,9 @@ AI 코딩은 보통 "일단 만들어줘"에서 시작할 수 있다. 하지만 
 
 기술 선택은 실행 부담을 낮추는 쪽으로 잡았다. 화면이 있는 앱은 Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, lucide-react를 우선 후보로 둔다. 한 프로젝트 안에서 화면, 서버 로직, Route Handler, Server Action을 함께 다룰 수 있고, `npm run start`로 사내망 PC나 내부 서버에서 실행하기 쉽기 때문이다.
 
-저장이 필요하면 먼저 SQLite 파일과 작은 DB helper를 검토한다. Zod, React Hook Form, Recharts, TanStack Table, Drizzle ORM 같은 도구는 입력 검증, 복잡한 폼, 차트, 고급 표, 관계형 DB 관리가 실제로 필요할 때만 추가한다. Docker, 외부 DB, 인증 서비스, 전역 상태관리, 데이터 패칭 라이브러리는 요구가 분명할 때만 쓴다.
+저장이 필요하면 먼저 SQLite 파일과 작은 DB helper를 검토한다. Zod, React Hook Form, Recharts, TanStack Table, Drizzle ORM 같은 도구는 입력 검증, 복잡한 폼, 차트, 고급 표, 관계형 DB 관리가 실제로 필요할 때만 추가한다.
+
+실습과 교육에서 기본으로 필요한 것은 SaaS 연동이 아니라 앱을 덜 허술하게 만드는 라이브러리 선택이다. 버튼, 입력, 표, 차트, 파일 업로드, 검색, 캘린더, 드래그 앤 드롭 같은 구현은 필요에 맞는 검증된 라이브러리를 먼저 검토한다. 인증, 결제, 메일 발송, hosted DB 같은 서비스 연동은 기본 범위가 아니다.
 
 ## 빠른 시작 (Quickstart)
 
@@ -152,7 +154,7 @@ write-prd -> write-todo -> TODO 번호로 구현 요청
 - **[write-prd](./skills/write-prd/SKILL.md)**: 결정된 제품 방향, 앱 형태, 데이터 필요, 사용 환경을 로컬 `PRD.md`로 정리한다.
 - **[write-todo](./skills/write-todo/SKILL.md)**: `PRD.md`를 사용자가 확인할 수 있는 작은 TODO 순서로 나눈다.
 - **[apply-design](./skills/apply-design/SKILL.md)**: 붙여넣은 디자인 시스템을 프로젝트용 `DESIGN.md`로 정리하고 요청받으면 UI에 적용한다.
-- **[LIBRARY_MAP.md](./skills/write-prd/references/LIBRARY_MAP.md)**: UI, 폼, 표, 차트, DB, 파일, PDF, 검색, 인증, 테스트 등 라이브러리 후보를 상황별로 좁힌다.
+- **[LIBRARY_MAP.md](./skills/write-prd/references/LIBRARY_MAP.md)**: UI, 폼, 표, 차트, DB, 파일, PDF, 검색, 캘린더, 드래그 앤 드롭, 테스트 등 라이브러리 후보를 상황별로 좁힌다.
 
 ### 중간 작업 (During the Project)
 

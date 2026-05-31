@@ -4,12 +4,16 @@
 
 실제 설치 전에는 공식 문서와 현재 버전을 확인한다. 이 문서는 최신 API 문서가 아니라 "무엇을 검토할지"를 줄이는 참고 자료다.
 
+여기서 말하는 라이브러리는 앱의 화면, 상호작용, 데이터 표시, 파일 처리, 검증, 테스트 품질을 높이는 도구다. 인증, 결제, 메일 발송, hosted DB 같은 SaaS나 외부 서비스 후보표가 아니다.
+
 ## 사용 원칙
 
 - 기본값은 작게 둔다. 필요가 생긴 뒤 추가한다.
 - 이미 프로젝트가 쓰는 도구가 있으면 기존 선택을 우선한다.
 - 라이브러리는 사용자가 볼 수 있는 완성도, 반복 구현 안정성, 유지보수성을 높일 때만 추가한다.
-- 외부 서비스, 인증, ORM, 상태관리, 데이터 패칭 라이브러리는 기본값이 아니다.
+- 인증, 결제, 메일 발송, hosted DB 같은 서비스 연동은 실습/교육 기본 범위가 아니다.
+- ORM, 상태관리, 데이터 패칭 라이브러리는 기본값이 아니다.
+- UI 컴포넌트, 표, 차트, 폼, 캘린더, 드래그 앤 드롭처럼 직접 만들면 허술해지기 쉬운 기능은 먼저 라이브러리를 검토한다.
 - 데모/MVP는 "있으면 좋아 보이는 기능"보다 실행 가능성과 검증 가능성을 우선한다.
 - 한 번에 이 문서 전체를 읽지 않는다. 필요한 카테고리만 참고한다.
 
@@ -34,12 +38,12 @@
 
 명확한 요구 없이 기본으로 넣지 않는 것:
 
-- Auth.js, Clerk, Supabase Auth 같은 인증
 - Prisma, Drizzle ORM 같은 ORM
 - TanStack Query, SWR 같은 서버 상태 라이브러리
 - Zustand, Jotai, Redux Toolkit 같은 클라이언트 상태관리
 - PostgreSQL, MySQL 같은 외부 DB
 - Redis, BullMQ 같은 외부 인프라
+- 인증, 결제, 메일 발송, hosted DB 같은 서비스 연동
 
 ## UI
 
@@ -94,6 +98,60 @@
 - 쓸 때: 버튼, badge, input variant를 체계적으로 관리할 때
 - 쓰지 않을 때: variant가 한두 개뿐일 때
 - 기본값: shadcn/ui component 패턴을 직접 확장할 때 고려
+
+## Feedback, Navigation, and Interaction
+
+### Sonner
+- 쓸 때: 저장 완료, 실패, 업로드 진행 같은 toast 알림이 필요할 때
+- 쓰지 않을 때: 상태가 화면 본문에서 충분히 보일 때
+- 기본값: shadcn/ui 기반 앱에서 toast가 필요하면 우선 고려
+
+### react-hot-toast
+- 쓸 때: 아주 가벼운 toast 알림만 빠르게 붙이면 될 때
+- 쓰지 않을 때: shadcn/ui와 맞춘 Sonner를 이미 쓰는 경우
+- 기본값: 아님
+
+### cmdk
+- 쓸 때: 명령 팔레트(command palette), 빠른 검색, 메뉴 검색이 필요할 때
+- 쓰지 않을 때: 검색 입력 하나나 일반 메뉴로 충분할 때
+- 기본값: 고급 탐색 UI가 필요할 때 고려
+
+### dnd-kit
+- 쓸 때: 카드 순서 변경, kanban, sortable list, drag-and-drop 편집이 필요할 때
+- 쓰지 않을 때: 위/아래 버튼으로 순서 변경이 충분할 때
+- 기본값: drag-and-drop이 핵심 동작일 때 고려
+
+### react-resizable-panels
+- 쓸 때: 사이드바, 미리보기, 편집기처럼 패널 크기를 조절해야 할 때
+- 쓰지 않을 때: 고정 레이아웃으로 충분할 때
+- 기본값: 업무 도구형 화면에서 패널 UI가 필요할 때 고려
+
+### TanStack Virtual
+- 쓸 때: 긴 목록이나 큰 표를 화면 성능 문제 없이 보여야 할 때
+- 쓰지 않을 때: 데이터가 작거나 페이지네이션으로 충분할 때
+- 기본값: 대량 목록을 렌더링할 때 고려
+
+### Embla Carousel
+- 쓸 때: 접근성 있는 carousel이나 슬라이드 UI가 필요할 때
+- 쓰지 않을 때: 업무 도구에서 carousel 자체가 불필요할 때
+- 기본값: 아님
+
+### React Flow
+- 쓸 때: 노드-엣지 흐름도, 프로세스 편집기, 관계 시각화가 필요할 때
+- 쓰지 않을 때: 정적 다이어그램 이미지나 단순 리스트로 충분할 때
+- 기본값: 흐름도 편집/표시가 핵심일 때 고려
+
+## Motion and Polish
+
+### motion
+- 쓸 때: modal 전환, list reorder, progress reveal 같은 작은 애니메이션이 품질에 영향을 줄 때
+- 쓰지 않을 때: 정적인 업무 화면이 더 적절할 때
+- 기본값: 아님
+
+### @formkit/auto-animate
+- 쓸 때: 목록 추가/삭제 같은 단순 변화에 자연스러운 전환만 필요할 때
+- 쓰지 않을 때: 애니메이션 요구가 없거나 직접 제어가 필요할 때
+- 기본값: 조건부
 
 ## Forms and Validation
 
@@ -330,16 +388,6 @@
 - 쓰지 않을 때: 구현 단순성이 더 중요할 때
 - 기본값: 조건부
 
-### Meilisearch
-- 쓸 때: 별도 검색 서버를 둘 수 있고 typo-tolerant search가 중요할 때
-- 쓰지 않을 때: 외부 서비스/서버 추가가 부담일 때
-- 기본값: 아님
-
-### Typesense
-- 쓸 때: 별도 검색 서버와 typed schema 기반 검색이 필요할 때
-- 쓰지 않을 때: 작은 MVP 검색일 때
-- 기본값: 아님
-
 ## File Upload and Images
 
 ### react-dropzone
@@ -374,11 +422,6 @@
 - 쓰지 않을 때: 단순 위치 표시만 필요할 때
 - 기본값: 아님
 
-### Mapbox GL JS
-- 쓸 때: Mapbox 서비스를 쓰기로 했고 고급 지도 UI가 필요할 때
-- 쓰지 않을 때: 외부 유료 서비스 의존을 피해야 할 때
-- 기본값: 아님
-
 ## Realtime and Background Work
 
 ### Server-Sent Events
@@ -404,38 +447,6 @@
 ### BullMQ
 - 쓸 때: Redis 기반 job queue, retry, worker 분리가 필요할 때
 - 쓰지 않을 때: Redis를 추가하기 부담스럽거나 데모 수준일 때
-- 기본값: 아님
-
-## Auth, Email, and External Services
-
-### Auth.js
-- 쓸 때: Next.js 앱에서 여러 OAuth provider와 session 관리가 필요할 때
-- 쓰지 않을 때: 교육용 데모나 사내망 MVP에서 인증이 범위 밖일 때
-- 기본값: 아님
-
-### Better Auth
-- 쓸 때: 앱 내부 인증을 직접 구성하고 TypeScript 중심 auth library를 검토할 때
-- 쓰지 않을 때: 외부 hosted auth가 더 적합할 때
-- 기본값: 아님
-
-### Clerk
-- 쓸 때: hosted auth, 조직/사용자 관리 UI까지 빠르게 붙일 때
-- 쓰지 않을 때: 외부 SaaS 의존을 피해야 할 때
-- 기본값: 아님
-
-### Supabase
-- 쓸 때: Postgres, Auth, Storage, Realtime을 한 서비스로 쓰기로 했을 때
-- 쓰지 않을 때: 로컬 파일 DB나 사내망 단일 PC 실행이 목표일 때
-- 기본값: 아님
-
-### Resend
-- 쓸 때: transactional email을 API로 보내야 할 때
-- 쓰지 않을 때: 이메일 발송이 MVP 범위가 아닐 때
-- 기본값: 아님
-
-### Nodemailer
-- 쓸 때: SMTP 서버가 이미 있고 직접 이메일을 보내야 할 때
-- 쓰지 않을 때: email provider API가 더 단순할 때
 - 기본값: 아님
 
 ## Testing and Automation
@@ -486,4 +497,3 @@
 - 쓸 때: Node script에서 `.env`를 직접 읽어야 할 때
 - 쓰지 않을 때: Next.js 같은 framework가 env loading을 이미 처리할 때
 - 기본값: 조건부
-

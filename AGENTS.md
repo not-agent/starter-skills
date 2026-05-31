@@ -13,7 +13,7 @@ Starter Skills는 개인 프로젝트를 AI 코딩 에이전트와 진행하기 
 
 `setup-project`는 프로젝트별 설정을 기본값으로 바로 기록하는 스킬이다. OS별 Shell은 Windows CMD, macOS zsh, Linux/WSL bash 중 하나로 두고, 사용자 URL은 네트워크 주소를 기본값으로 둔다. 앱을 바로 만들거나 PRD/TODO를 대신 만들지 않는다. 앱 형태, 데이터 필요, 기술 전제는 사용자의 요청을 따르고, 문서로 남길 때 `write-prd`에서 다룬다.
 
-`skills/write-prd/references/LIBRARY_MAP.md`는 라이브러리 후보를 좁히는 참고 문서다. 필요한 카테고리만 읽고, 라이브러리를 자동으로 추가하지 않는다.
+`skills/write-prd/references/LIBRARY_MAP.md`는 앱 기능과 화면 완성도를 높이는 라이브러리 후보를 좁히는 참고 문서다. SaaS나 외부 서비스 후보표가 아니다. 필요한 카테고리만 읽고, 라이브러리를 자동으로 추가하지 않는다.
 
 기술 preset은 `skills/write-prd/preset-*.md`와 `skills/write-prd/mvp-library-stack.md`에 둔다. 이미 결정된 앱 형태와 데이터 필요를 PRD에 정리할 때만 조건부로 참고한다.
 
